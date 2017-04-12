@@ -3496,6 +3496,11 @@ ezcore {
   margin-right: auto;
   position: relative; }
 
+.ez-page-wrapper-no-boarder {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
+
 .ez-wysiwyg {
   overflow: hidden;
   position: absolute; }
@@ -3607,6 +3612,7 @@ ezcore {
 .ez-completed-element {
   border-bottom: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #656565;
   min-width: 25px;
   color: black;
   font-weight: normal;
@@ -3616,7 +3622,8 @@ ezcore {
   left: -100px;
   top: 5px;
   white-space: pre-wrap;
-  min-height: 18px; }
+  min-height: 18px;
+  padding-top: 10px; }
 
 .btn-arrow-right,
 .btn-arrow-left {

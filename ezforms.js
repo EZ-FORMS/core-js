@@ -2,14 +2,11 @@
  * Created by robbackus on 12/29/16.
  */
 
-var path = "/";
+var path = "/ezforms/";
 var pageScripts = document.getElementsByTagName('script');
 var coreAppFound = false;
-var coreRefIndex;
+
 for(var i = 0; i < pageScripts.length; i++){
-    if(pageScripts[i].outerHTML.indexOf('/ezforms.js') > -1){
-        coreRefIndex = i;
-    }
     if(pageScripts[i].outerHTML.indexOf('/core.app.js') > -1){
         coreAppFound = true;
     }
@@ -18,7 +15,7 @@ for(var i = 0; i < pageScripts.length; i++){
 if(!coreAppFound){
     var polyfills = document.createElement('script');
     polyfills.type = 'text/javascript';
-    polyfills.src = path + 'ezforms/js/core.polyfills.js';
+    polyfills.src = path + 'js/core.polyfills.js';
 
     document.getElementsByTagName('body')[0].appendChild(polyfills);
     polyfills.onload = initVendor;
@@ -26,7 +23,7 @@ if(!coreAppFound){
     function initVendor(){
         var vendor = document.createElement('script');
         vendor.type = 'text/javascript';
-        vendor.src = path + 'ezforms/js/core.vendor.js';
+        vendor.src = path + 'js/core.vendor.js';
 
         document.getElementsByTagName('body')[0].appendChild(vendor);
         vendor.onload = initApp
@@ -36,7 +33,7 @@ if(!coreAppFound){
         setTimeout(function(){
             var app = document.createElement('script');
             app.type = 'text/javascript';
-            app.src = path + 'ezforms/js/core.app.js';
+            app.src = path + 'js/core.app.js';
 
             document.getElementsByTagName('body')[0].appendChild(app);
         },50)
