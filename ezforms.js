@@ -2,6 +2,7 @@
  * Created by robbackus on 12/29/16.
  */
 
+
 var path = "/ezforms/";
 var pageScripts = document.getElementsByTagName('script');
 var coreAppFound = false;
@@ -249,30 +250,38 @@ function resumeMode(){
     }
 }
 
-function checkSDKReady() {
-    if (typeof Ezforms != 'undefined') {
+function checkSDKReady(ready) {
+    function load(){
+        if (typeof Ezforms.version != 'undefined') {
 
-        switch (mode){
-            case 'execute':
-                executeMode();
-                break;
-            case 'completed':
-                completedMode();
-                break;
-            case 'resume':
-                resumeMode();
-                break;
-            case 'preview':
-                previewMode();
-                break;
-            default:
-                break;
+            switch (mode){
+                case 'execute':
+                    executeMode();
+                    break;
+                case 'completed':
+                    completedMode();
+                    break;
+                case 'resume':
+                    resumeMode();
+                    break;
+                case 'preview':
+                    previewMode();
+                    break;
+                default:
+                    break;
+            }
+            ready();
+
+        } else {
+            setTimeout(function () {
+                load();
+            }, 10)
         }
 
-    } else {
-        setTimeout(function () {
-            checkSDKReady();
-        }, 10)
     }
+    load()
 }
-checkSDKReady();
+
+var Ezforms = {
+    ready:checkSDKReady
+};

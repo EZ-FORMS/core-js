@@ -3405,7 +3405,8 @@ html .k-upload {
 
 ezcore {
   font-family: -webkit-body;
-  position: relative; }
+  position: relative;
+  overflow: scroll; }
 
 .loader {
   background-position: center center;
@@ -3481,9 +3482,11 @@ ezcore {
   margin-right: auto;
   page-break-after: always; }
 
+ezforms-row {
+  position: relative; }
+
 .ez-row {
   /*overflow: hidden;*/
-  position: relative;
   border: 1px solid #DDD;
   display: block; }
 
