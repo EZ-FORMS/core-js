@@ -1,9 +1,9 @@
 <!doctype html>
-<html style="position: fixed;">
+<html>
 <head>
     <meta charset="utf-8">
     <title>EZFORMS</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta id="viewport" name="viewport" content="width=device-width">
 
     <style>
@@ -12,6 +12,9 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
+        }
+        * {
+            overflow: visible !important;
         }
 
         body {
@@ -41,6 +44,7 @@
 <body class="">
 <ezcore></ezcore>
 <script type="text/javascript" src="./js/core.polyfills.js"></script><script type="text/javascript" src="./js/core.vendor.js"></script><script type="text/javascript" src="./js/core.app.js"></script></body>
+
 <script type="text/javascript" src="./ezforms.js"></script>
 <script>
     Ezforms.ready(function(){

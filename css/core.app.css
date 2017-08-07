@@ -1,7 +1,7 @@
 ezcore {
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
-  overflow: scroll;
+  overflow: auto !important;
   font-weight: 200; }
 
 .loader {
@@ -46,7 +46,7 @@ ezcore {
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  overflow: hidden;
+  overflow: hidden !important;
   outline: none; }
 
 .right {
@@ -67,7 +67,7 @@ ezcore {
 
 .dropdown-menu {
   max-height: 250px;
-  overflow: scroll; }
+  overflow: auto !important; }
 
 .ez-logo {
   max-height: 100px;
@@ -106,7 +106,7 @@ ezforms-row {
   position: relative; }
 
 .ez-wysiwyg {
-  overflow: hidden;
+  overflow: hidden !important;
   position: absolute; }
 
 .extras-wrapper {
